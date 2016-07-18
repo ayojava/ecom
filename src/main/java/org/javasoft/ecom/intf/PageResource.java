@@ -13,6 +13,8 @@ public interface PageResource {
     
     public static final String DISPLAY_DATE_FORMAT_DAYS = "dd-MM-yyyy";
     
+    public static final String DISPLAY_DATE_FULL_FORMAT = "dd-MM-yyyy HH:mm:ss ";
+    
     public static final String DEFAULT_INCLUDE_PATH = "/WEB-INF/includes/";
     
     public static final String DEFAULT_PAGE = "welcome";

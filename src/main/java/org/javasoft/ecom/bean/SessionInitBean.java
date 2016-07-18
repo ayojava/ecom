@@ -63,6 +63,11 @@ public class SessionInitBean extends AbstractBean implements Serializable {
                 geoLocation.setCountryName(geoLocationVO.getCountryName());
                 geoLocation.setIpAddress(geoLocationVO.getIpAddress());
                 geoLocation.setTimezone(geoLocationVO.getTimezone());
+                geoLocation.setCity(geoLocationVO.getCity());
+                geoLocation.setLatitude(geoLocationVO.getLatitude());
+                geoLocation.setRegionCode(geoLocationVO.getRegionCode());
+                geoLocation.setRegionName(geoLocationVO.getRegionName());
+                geoLocation.setZipCode(geoLocationVO.getZipCode());
                 saveLocation(geoLocation);
             }
         }

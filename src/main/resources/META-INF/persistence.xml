@@ -29,6 +29,7 @@
     <class>org.javasoft.ecom.entity.Comment</class>
     <class>org.javasoft.ecom.entity.Product</class>
     <class>org.javasoft.ecom.entity.AddressTemplate</class>
+    <class>org.javasoft.ecom.entity.GeoLocation</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
     <properties>

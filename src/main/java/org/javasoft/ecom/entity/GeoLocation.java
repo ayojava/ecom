@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
@@ -44,6 +43,18 @@ public class GeoLocation implements Serializable {
     private String countryName;
     
     private String timezone;
+    
+    private String regionCode;
+    
+    private String regionName;
+    
+    private String city;
+    
+    private String zipCode;
+    
+    private String latitude;
+    
+    private String longitude;
     
     @Temporal(TIMESTAMP)
     private Date createDate;
