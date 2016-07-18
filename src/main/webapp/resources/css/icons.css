@@ -6,7 +6,6 @@ and open the template in the editor.
 /* 
     Created on : 28 Feb, 2016, 12:24:41 AM
     Author     : ayojava
-*/
 
 .no-notification{
     background: url("#{resource['images/icons/notifications-black.png']}") no-repeat !important;
@@ -32,6 +31,14 @@ and open the template in the editor.
     width:70px;
     vertical-align: middle;
 }
+
+.log-icon{
+    background: url("#{resource['images/icons/log.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+*/
 
 .view-icon{
     background: url("#{resource['images/icons/actions/view.png']}") no-repeat !important;
@@ -63,11 +70,7 @@ and open the template in the editor.
     width:16px;
 }
 
-.log-icon{
-    background: url("#{resource['images/icons/log.png']}") no-repeat !important;
-    height:16px;
-    width:16px;
-}
+
 
 .account-icon{
     background: url("#{resource['images/icons/accounts.png']}") no-repeat !important;

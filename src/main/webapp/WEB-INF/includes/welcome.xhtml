@@ -52,7 +52,7 @@ and open the template in the editor.
                       <code>Comments Menu :</code>  
                     </div>
                     <div class="ui-g-10">
-                         You can fill your comment and your email if you would want me to contact you or you can send me a mail directly 
+                         You can leave a comment or send  a mail directly to :
                          <span style="font-style: italic ;text-decoration: underline;color: #1f89ce;font-weight: bold;">ayojava@gmail.com</span>
                     </div>
                     <div class="ui-g-12">
@@ -108,7 +108,9 @@ and open the template in the editor.
                     
                     <div class="ui-g-12">
                         This application is hosted on <code>Red Hat Openshift platform</code>  , deployed with  
-                        <code>Wildfly Application Server 9 </code> and <code>MongoDB 2.4</code> .
+                        <code>Wildfly Application Server 9 </code> and <code>MongoDB 2.4</code> . It has been viewed 
+                        <code>#{applicationInitBean.pageAccessCount}</code> times since the last server restart on 
+                        <code>#{of:formatDate(applicationInitBean.serverStartDate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}</code>
                     </div>
                 </div>
 

@@ -21,7 +21,9 @@ public interface RestUrl {
     
     public final String COMMENT_URL = "http://ecom-emsproj.rhcloud.com/rest/comments/";
     
-    public final String GEOLOCATION_URL = "http://freegeoip.net/";
+    public final String GEOLOCATION_URL = "http://ecom-emsproj.rhcloud.com/rest/geoLocation/";
+    
+    public final String FREEGEOIP_URL = "http://freegeoip.net/";
     
 //    public final String CATEGORY_URL = "http://localhost:8080/firstapp-1.0/rest/categories/";
 //    
