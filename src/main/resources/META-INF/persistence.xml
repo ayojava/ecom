@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+ <!--   
+    <persistence-unit name="localMongoDb_PU" transaction-type="JTA">
+    <class>org.javasoft.ecom.entity.Category</class>
+    <class>org.javasoft.ecom.entity.Customer</class>
+    <class>org.javasoft.ecom.entity.Order</class>
+    <class>org.javasoft.ecom.entity.Comment</class>
+    <class>org.javasoft.ecom.entity.Product</class>
+    <class>org.javasoft.ecom.entity.AddressTemplate</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+    <properties>
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+      <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
+      <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.mongodb.MongoDBDialect"/>
+      <property name="hibernate.ogm.datastore.host" value="127.0.0.1:27017"/>
+      <property name="hibernate.ogm.datastore.database" value="eComOGM"/>
+      <property name="hibernate.ogm.datastore.create_database" value="true"/>
+      <property name="hibernate.ogm.datastore.username" value=""/>
+      <property name="hibernate.ogm.datastore.password" value=""/>
+    </properties>
+  </persistence-unit>
+  --> 
+  <persistence-unit name="openShiftMongoDb_PU" transaction-type="JTA">
+    <class>org.javasoft.ecom.entity.Category</class>
+    <class>org.javasoft.ecom.entity.Customer</class>
+    <class>org.javasoft.ecom.entity.Order</class>
+    <class>org.javasoft.ecom.entity.Comment</class>
+    <class>org.javasoft.ecom.entity.Product</class>
+    <class>org.javasoft.ecom.entity.AddressTemplate</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+    <properties>
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+      <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
+      <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.mongodb.MongoDBDialect"/>
+      <property name="hibernate.ogm.datastore.host" value="127.11.66.2:27017"/>
+      <property name="hibernate.ogm.datastore.database" value="ecom"/>
+      <property name="hibernate.ogm.datastore.create_database" value="true"/>
+      <property name="hibernate.ogm.datastore.username" value="admin"/>
+      <property name="hibernate.ogm.datastore.password" value="d4Htg4nXPfwV"/>
+    </properties>
+  </persistence-unit> 
+
+</persistence>

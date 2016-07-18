@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:of="http://omnifaces.org/functions"
+      xmlns:o="http://omnifaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="ui-g well">
+                <div class="ui-g-12">
+                    <div class="ui-g-12">
+                        <h1>eCOM</h1>
+                    </div>
+                    <div class="ui-g-12">
+                        This Application serves as a dummy  online shopping store. It consists of the following menus : 
+                    </div>
+                    <div class="ui-g-2">
+                        <code>Customer Menu :</code>
+                    </div>
+                    <div class="ui-g-10">
+                         This menu is used to create a customer who intends to purchase a product from the application. Other functionalities include View , Edit, Delete and Make an order.
+                    </div>
+                    <div class="ui-g-2">
+                        <code>Category Menu :</code>
+                    </div>
+                    <div class="ui-g-10">
+                         This menu is used to create a Category (products offered are grouped into Categories) on the application. 
+                        Other functionalities include View and  Edit.
+                    </div>
+                    <div class="ui-g-2">
+                        <code>Product Menu :</code>
+                    </div>
+                    <div class="ui-g-10">
+                         This menu is used to create Products which are grouped to Categories  on the application.
+                        Each product is also assigned a code and default status of "AVAILABLE" .Other functionalities include View and Delete 
+                        ( Only Products with status of "AVAILABLE" can be deleted )
+                    </div>
+                    <div class="ui-g-2">
+                      <code>Order Menu :</code>  
+                    </div>
+                    <div class="ui-g-10">
+                         This menu is used to view orders made by customers  on the application.
+                        Each Order when created is assigned an Order Code with a status of "PENDING" then changed to "COMPLETED"
+                        after processing
+                    </div>
+                    <div class="ui-g-2">
+                      <code>Comments Menu :</code>  
+                    </div>
+                    <div class="ui-g-10">
+                         You can fill your comment and your email if you would want me to contact you or you can send me a mail directly 
+                         <span style="font-style: italic ;text-decoration: underline;color: #1f89ce;font-weight: bold;">ayojava@gmail.com</span>
+                    </div>
+                    <div class="ui-g-12">
+                        <h1>Technologies Used : </h1>
+                    </div>
+                    <div class="ui-g-12">
+                        The following Java Technology Stack  were used for this project
+                    </div>
+                    <div class="ui-g-12">
+                        <table class="addTableBorders" width="100%" cellpadding ="3">
+                            <tr>
+                                <td width="17%">
+                                    <code>Primefaces 6.0 </code>
+                                </td>
+                                <td width="83%">
+                                    Including JSF 2.2 and Facelets 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="17%">
+                                   <code>CDI Beans : </code>  
+                                </td>
+                                <td width="83%">
+                                    Glue between the Front-end and JAX-RS calls 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="17%">
+                                   <code>JAX-RS Service : </code>  
+                                </td>
+                                <td width="83%">
+                                    Exposed the Business service methods for the CDI Beans 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="17%">
+                                    <code>EJB and JPA </code> 
+                                </td>
+                                <td width="83%">
+                                   Handles Business functions for the application. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="17%">
+                                   <code>Hibernate OGM : </code>  
+                                </td>
+                                <td width="83%">
+                                    Used to map the JPA Entities to MongoDB database which stores records .
+                                </td>
+                            </tr>
+                        </table>    
+                    </div>
+                    
+                    <div class="ui-g-12">
+                        This application is hosted on <code>Red Hat Openshift platform</code>  , deployed with  
+                        <code>Wildfly Application Server 9 </code> and <code>MongoDB 2.4</code> .
+                    </div>
+                </div>
+
+            </div>
+        </ui:composition>
+    </body>
+</html>

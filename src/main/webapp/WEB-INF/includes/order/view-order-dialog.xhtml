@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"  xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:o="http://omnifaces.org/ui"  xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition>
+            <p:dialog modal="true" widgetVar="viewOrderDialogPopup" resizable="false" id="viewOrderDialogPopupId"
+                      showEffect="puff" hideEffect="clip" width="auto" header="Products Ordered">
+
+                <p:outputPanel id="viewOrderDialogPopupPanel">
+                    <table class="addTableBorders" width="100%" cellpadding ="5" cellspacing="5">
+                        <tr>
+                            <th>No</th>
+                            <th>Product Name</th>
+                            <th>Product Color</th>
+                            <th>Product Type</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                        <tbody>
+                            <ui:repeat value="#{orderPageBean.selectedOrders}" var="orderVO" varStatus="pdtStatus">
+                                <h:panelGroup rendered="#{pdtStatus.even}">
+                                    <tr>
+                                        <td>#{pdtStatus.index + 1}</td>
+                                        <td>#{orderVO.product.name}</td>
+                                        <td style="text-align: center">#{orderVO.product.productColour}</td>
+                                        <td style="text-align: center">#{orderVO.product.productType}</td>
+                                        <td style="text-align: center">#{orderVO.product.price}</td>
+                                        <td style="text-align: center">#{orderVO.quantity}</td>
+                                        <td style="text-align: center">#{orderVO.product.price * orderVO.quantity}</td>
+                                    </tr>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{pdtStatus.odd}">
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>#{pdtStatus.index + 1}</td>
+                                        <td>#{orderVO.product.name}</td>
+                                        <td style="text-align: center">#{orderVO.product.productColour}</td>
+                                        <td style="text-align: center">#{orderVO.product.productType}</td>
+                                        <td style="text-align: center">#{orderVO.product.price}</td>
+                                        <td style="text-align: center">#{orderVO.quantity}</td>
+                                        <td style="text-align: center">#{orderVO.product.price * orderVO.quantity}</td>
+                                    </tr>
+                                </h:panelGroup>
+                            </ui:repeat>
+                        </tbody>
+                        <tfoot>
+                            <td colspan="6" style="text-align: right">
+                                <span style="margin-right: 10px;">
+                                    Grand Total :
+                                </span>
+                            </td>
+                            <td>
+                                <span style="font-weight: bold;">
+                                    #{orderPageBean.grandTotal}
+                                </span>
+                            </td>
+                        </tfoot>
+                    </table>
+
+                    <div style="text-align: right; margin-top : 5px; margin-bottom : 3px;">
+                        <p:commandButton styleClass="roundButton"  value="Save" style="margin-right: 7px;"  update="@form"
+                                         action="#{orderPageBean.saveOrder()}" icon="fa fa-plus" 
+                                         disabled="#{orderPageBean.selectedProducts.size() eq 0}"
+                                         onclick="PF('viewOrderDialogPopup').hide()" title="Yes"/> 
+
+                        <p:commandButton styleClass="roundButton"  value="Cancel" onclick="PF('viewOrderDialogPopup').hide();" 
+                                         type="button" style="margin-right: 7px;"  
+                                         icon="fa fa-fw fa-stop-circle"/>
+                    </div>
+
+                </p:outputPanel>
+            </p:dialog>
+        </ui:composition>
+    </body>
+</html>

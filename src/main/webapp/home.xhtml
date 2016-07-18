@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" 
+                xmlns:o="http://omnifaces.org/ui"  xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html" 
+                xmlns:of="http://omnifaces.org/functions" 
+                template="/WEB-INF/templates/home-template.xhtml"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:define name="pageTitle">
+        A Dummy E-Commerce site  (Hibernate OGM , MongoDb , JAX-RS , CDI , Primefaces , Omnifaces )
+    </ui:define>
+
+    <ui:define name="topNavBar">
+        <ui:include src="/WEB-INF/includes/common/header.xhtml"/>
+    </ui:define>
+
+    <ui:define name="menu-contents">
+        <ui:include src="/WEB-INF/includes/navigation/navigation-menu.xhtml"/>
+    </ui:define>
+
+    <ui:define name="body-contents">
+        <div class="ui-g">
+            <o:messages id="mainFormErrorMsg" layout="table" for="homeForm" styleClass="displayErrorMsg"
+                        message="There are validation errors on the page, kindly fix them."/>
+            <o:form id="homeForm" enctype="multipart/form-data">
+                <p:growl id="msgHome" globalOnly="true" sticky="false" />
+                <ui:include src="#{navigatorBean.selectedContentPath}"/>
+            </o:form>
+        </div> 
+    </ui:define>
+
+
+</ui:composition>

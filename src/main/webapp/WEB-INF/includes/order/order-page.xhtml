@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:of="http://omnifaces.org/functions"
+      xmlns:o="http://omnifaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition>
+            <c:choose>
+                <c:when test="#{displayMode=='view'}">
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel id="name" value="Customer Name :"  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-10">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.fullName}"/>
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel id="code" value="Order Code : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.order.orderCode}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Status : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.order.status}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Order Date : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{of:formatDate(orderPageBean.order.orderdate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Payment Date : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{of:formatDate(orderPageBean.order.paymentDate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Quantity : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.productCount}"/>
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Amount : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.order.subtotal}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-12">
+                        <hr size="0" class="pageSeparator"/>
+                    </div>
+
+                    <c:if test="#{orderPageBean.pending}">
+                        <div class="ui-g-12">
+                            <span style="margin-left:3px;" class="pageText"> 
+                                please fill in the Delivery Address and Click the Process Button 
+                            </span>
+                        </div> 
+                        <div class="ui-g-2">
+                            <span style="margin-left:3px;">
+                                <p:outputLabel id="streetLbl" value="Street No " for="streetTxt" styleClass="txtLbl"/>
+                            </span> 
+                        </div>
+                        <div class="ui-g-10">
+                            <span style="margin-left:3px;">    
+                                <p:inputText id="streetTxt" required="true" autocomplete="off" size="40"
+                                             value="#{orderPageBean.addressTemplate.streetDesc}"/>
+                                <p:message for="streetTxt" display="icon" />
+                            </span>
+                        </div>
+
+                        <div class="ui-g-2">
+                            <span style="margin-left:3px;">
+                                <p:outputLabel id="cityLbl" value="City " for="cityTxt" styleClass="txtLbl"/>
+                            </span>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <span style="margin-left:3px;">
+                                <p:inputText id="cityTxt" required="true" autocomplete="off" size="30"
+                                             value="#{orderPageBean.addressTemplate.city}"/>
+                                <p:message for="cityTxt" display="icon" />
+                            </span>
+                        </div>
+
+                        <div class="ui-g-2">
+                            <span style="margin-left:3px;">
+                                <p:outputLabel id="stateLbl" value="State " for="stateTxt" styleClass="txtLbl"/>
+                            </span>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <span style="margin-left:3px;">
+                                <p:inputText id="stateTxt" required="true" autocomplete="off" size="30"
+                                             value="#{orderPageBean.addressTemplate.state}"/>
+                                <p:message for="stateTxt" display="icon" />
+                            </span>
+                        </div>
+
+                        <div class="ui-g-2">
+                            <span style="margin-left:3px;">
+                                <p:outputLabel id="zipCodeLbl" value="Zip Code " for="zipCodeTxt" styleClass="txtLbl"/>
+                            </span>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <span style="margin-left:3px;">
+                                <p:inputText id="zipCodeTxt" required="true" autocomplete="off" size="30"
+                                             value="#{orderPageBean.addressTemplate.zipCode}"/>
+                                <p:message for="zipCodeTxt" display="icon" />
+                            </span>
+                        </div>
+
+                        <div class="ui-g-2">
+                            <span style="margin-left:3px;">
+                                <p:outputLabel id="countryLbl" value="Country " for="selCountry" styleClass="txtLbl"/>
+                            </span>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <span style="margin-left:3px;">    
+                                <p:selectOneMenu id="selCountry" value="#{orderPageBean.addressTemplate.country}" required="true">
+                                    <f:selectItems value="#{globalBean.countries}"/>
+                                </p:selectOneMenu>
+                                <p:message for="selCountry" display="icon" />
+                            </span>
+                        </div>
+                    </c:if>
+                    <c:if test="#{not orderPageBean.pending}">
+                        <table class="addTableBorders" width="100%" cellpadding ="5" cellspacing="5">
+                            <thead>
+                                <tr>
+                                    <td colspan="4">
+                                        Details of Delivery Address   
+                                    </td>
+                                </tr>     
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span style="margin-left:3px;">
+                                            <p:outputLabel value="Street"  styleClass="pageLabel"/>
+                                        </span>  
+                                    </td>
+                                    <td colspan="3">
+                                        <span style="margin-left:3px;" class="pageText">    
+                                            <h:outputText value="#{orderPageBean.order.shippingAddress.streetDesc}"/>
+                                        </span>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="margin-left:3px;">
+                                            <p:outputLabel value="City"  styleClass="pageLabel"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;" class="pageText">    
+                                            <h:outputText value="#{orderPageBean.order.shippingAddress.city}"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;">
+                                            <p:outputLabel value="State"  styleClass="pageLabel"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;" class="pageText">    
+                                            <h:outputText value="#{orderPageBean.order.shippingAddress.state}"/>
+                                        </span>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="margin-left:3px;">
+                                            <p:outputLabel value="Zip - Code"  styleClass="pageLabel"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;" class="pageText">    
+                                            <h:outputText value="#{orderPageBean.order.shippingAddress.zipCode}"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;">
+                                            <p:outputLabel value="Country"  styleClass="pageLabel"/>
+                                        </span>  
+                                    </td>
+                                    <td>
+                                        <span style="margin-left:3px;" class="pageText">    
+                                            <h:outputText value="#{orderPageBean.order.shippingAddress.country}"/>
+                                        </span>  
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </c:if>
+                    <div class="ui-g-12">
+                        <hr size="0" class="pageSeparator"/>
+                    </div>
+
+                    <div class="ui-g-12">
+                        <p:dataTable id="orderedProductsTable" var="aProduct" value="#{orderPageBean.selectedProducts}" 
+                                     paginatorPosition="bottom" paginator="true" rows="40" rowIndexVar="rowIndex"
+                                     paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+                            <p:column headerText="No" style="text-align: center;width: 30px;">
+                                <h:outputText value="#{rowIndex+1}"/>
+                            </p:column>
+
+                            <p:column headerText=" Name " style="text-align: left;">
+                                <h:outputText value="#{aProduct.name}"/>
+                            </p:column>
+
+                            <p:column headerText=" Code " style="text-align: center;">
+                                <h:outputText value="#{productPageBean.capitalize(aProduct.productCode)}"/>
+                            </p:column>
+
+                            <p:column headerText=" Price " style="text-align: left;">
+                                <h:outputText value="#{aProduct.price}"/>
+                            </p:column>
+
+                            <p:column headerText=" Status " style="text-align: left;">
+                                <h:outputText value="#{productPageBean.capitalize(aProduct.status)}"/>
+                            </p:column>
+                        </p:dataTable>
+
+                    </div>
+                </c:when>
+                <c:when test="#{displayMode=='list'}">
+                    <p:dataTable id="ordersTable" var="aOrder" value="#{orderPageBean.allOrders}" 
+                                 paginatorPosition="bottom" paginator="true" rows="40" rowIndexVar="rowIndex"
+                                 paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+                        <p:column headerText="No" style="text-align: center;width: 30px;">
+                            <h:outputText value="#{rowIndex+1}"/>
+                        </p:column>
+
+                        <p:column headerText="Code" style="text-align: center;">
+                            <h:outputText value="#{aOrder.orderCode}"/>
+                        </p:column>
+
+                        <p:column headerText="Customer " style="text-align: left;">
+                            <h:outputText value="#{customerPageBean.showFullName(aOrder.customer)}"/>
+                        </p:column>
+
+                        <p:column headerText="Quantity" style="text-align: center;">
+                            <h:outputText value="#{orderPageBean.showProductCount(aOrder)}"/>
+                        </p:column>
+
+                        <p:column headerText="Total " style="text-align: center;">
+                            <h:outputText value="#{aOrder.subtotal}"/>
+                        </p:column>
+
+                        <p:column headerText=" Create Date " style="text-align: center;">
+                            <h:outputText value="#{of:formatDate(aOrder.orderdate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </p:column>
+
+                        <p:column headerText="Status" style="text-align: center;">
+                            <h:outputText value="#{orderPageBean.capitalize(aOrder.status)}"/>
+                        </p:column>
+
+                        <p:column headerText="Actions" style="text-align: center;width: 50px;">
+                            <p:commandButton update="@form" icon="view-icon"
+                                             action="#{orderPageBean.setPageResource(pageResource.VIEW_ORDER)}"
+                                             title="View Category" class="img-button">
+                                <f:setPropertyActionListener value="#{aOrder}" target="#{orderPageBean.order}"/>
+                            </p:commandButton>
+                            <span class="horizontalSeparator">|</span>
+
+                            <p:commandButton update="@form" 
+                                             icon="#{(orderPageBean.isPending(aOrder)) ? 'delete-icon' : 'delete-disabled-icon'}"
+                                             oncomplete="PF('cancelOrderConfirmPopup').show()"
+                                             disabled="#{!orderPageBean.isPending(aOrder)}"
+                                             title="Cancel Order" class="img-button">
+                                <f:setPropertyActionListener value="#{aOrder}" target="#{orderPageBean.order}"/>
+                            </p:commandButton>
+                        </p:column>                        
+                    </p:dataTable>
+                </c:when>
+                <c:when test="#{displayMode=='new'}">
+                    <p:dataTable id="orderProductsTable" var="aProduct" value="#{orderPageBean.availableProducts}" 
+                                 paginatorPosition="bottom" paginator="true" rows="40" 
+                                 rowIndexVar="rowIndex" rowKey="#{aProduct.productId}"
+                                 selection="#{orderPageBean.selectedProducts}"
+                                 paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+                        <f:facet name="header">
+                            Choose one or more products and click preview .
+                        </f:facet>
+
+                        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+
+                        <p:column headerText="No" style="text-align: center;width: 30px;">
+                            <h:outputText value="#{rowIndex+1}"/>
+                        </p:column>
+
+                        <p:column headerText=" Name " style="text-align: center;">
+                            <h:outputText value="#{aProduct.name}"/>
+                        </p:column>
+
+                        <p:column headerText=" Code " style="text-align: center;">
+                            <h:outputText value="#{orderPageBean.capitalize(aProduct.productCode)}"/>
+                        </p:column>
+
+                        <p:column headerText=" Colour " style="text-align: center;">
+                            <h:outputText value="#{aProduct.productColour}"/>
+                        </p:column>
+
+                        <p:column headerText=" Type " style="text-align: center;">
+                            <h:outputText value="#{aProduct.productType}"/>
+                        </p:column>
+
+                        <p:column headerText=" Category " style="text-align: center;">
+                            <h:outputText value="#{aProduct.category.categoryName}"/>
+                        </p:column>
+
+                        <p:column headerText=" Price " style="text-align: center;">
+                            <h:outputText value="#{aProduct.price}"/>
+                        </p:column>
+
+                        <p:column headerText=" Status " style="text-align: left;">
+                            <h:outputText value="#{orderPageBean.capitalize(aProduct.status)}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </c:when>
+            </c:choose>
+        </ui:composition>
+    </body>
+</html>

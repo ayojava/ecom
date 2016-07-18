@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"  xmlns:p="http://primefaces.org/ui" 
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <div class="ui-g" >
+                
+                <div class="ui-g-2">
+                    <p:ajaxStatus style="width:25px;height:25px;margin-left: 100px">
+                        <f:facet name="start">
+                            <p:graphicImage name="icons/ajax-loading.gif" library="images" />
+                        </f:facet>
+                        <f:facet name="complete">
+                            <h:outputText value="" />
+                        </f:facet>
+                    </p:ajaxStatus>      
+                </div>
+                
+                <div class="ui-g-7" style="text-align: center">
+                    <span style="font-size: 30px; color: #0088cc;font-weight: bold;">
+                        First App
+                    </span> 
+                    <span style="color: graytext">
+                        (A Dummy E-Commerce Application)
+                    </span>
+                </div>
+                
+                <div class="ui-g-3" style="text-align: right">
+                    <span style="font-style: italic">
+                        <script type="text/javascript" >
+                            var d = new Date();
+                            var weekday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+                            var monthname = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                            document.write(weekday[d.getDay()] + ", ");
+                            document.write(monthname[d.getMonth()] + " ");
+                            document.write(d.getDate() + " ");
+                            document.write(d.getFullYear() + ".");
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

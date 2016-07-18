@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:o="http://omnifaces.org/ui" xmlns:p="http://primefaces.org/ui" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:body>
+        <div class="ui-g-nopad">
+            
+            <div class="ui-g-12" style="border: 1px solid #AFBEBE; border-radius : 8px;text-align: center;margin-top: 10px;">
+                <p:graphicImage name="icons/display.jpg" library="images" class="img-circle profile-image"/>   
+            </div>
+            
+            <div class="ui-g-12">
+                <o:form id="navMenuForm">
+                    <p:tieredMenu id="navMenu" style="width: 100% ;border-radius: 8px;" >
+                        <p:menuitem id="homeMenu" value="Home"  icon="fa fa-home fa-1g"
+                                    action="#{homePageBean.setPageResource(pageResource.DEFAULT_PAGE)}" update=":homeForm"/>
+                        <p:separator />
+                        <p:menuitem id="customerMenu" value="Customer"  icon="fa fa-user fa-1g"
+                                    action="#{customerPageBean.setPageResource(pageResource.LIST_CUSTOMERS)}" update=":homeForm"/>
+                        <p:separator />
+                        <p:menuitem id="categoryMenu" value="Category"  icon="fa fa-object-group fa-1g"
+                                    action="#{categoryPageBean.setPageResource(pageResource.LIST_CATEGORIES)}" update=":homeForm"/>
+                        <p:separator />
+                        <p:menuitem id="productMenu" value="Product"  icon="fa fa-product-hunt fa-1g"
+                                    action="#{productPageBean.setPageResource(pageResource.LIST_PRODUCTS)}" update=":homeForm"/>
+                        <p:separator />
+                        <p:menuitem id="orderMenu" value="Order"  icon="fa fa-shopping-cart fa-1g"
+                                    action="#{orderPageBean.setPageResource(pageResource.LIST_ORDERS)}" update=":homeForm"/>
+                        <p:separator />
+                        <p:menuitem id="commentMenu" value="Comment"  icon="fa fa-commenting fa-1g"
+                                    action="#{commentPageBean.setPageResource(pageResource.NEW_COMMENT)}" update=":homeForm"/>
+                    </p:tieredMenu> 
+                </o:form>  
+            </div>
+
+        </div>
+
+    </h:body>
+</html>

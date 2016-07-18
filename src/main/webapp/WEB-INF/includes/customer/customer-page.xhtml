@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:of="http://omnifaces.org/functions"
+      xmlns:o="http://omnifaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition>
+            <c:choose>
+                <c:when test="#{displayMode=='new' or displayMode=='edit'}">
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="titleLbl" value="Title " for="titleTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-10">
+                        <span style="margin-left:3px;">    
+                            <p:selectOneMenu id="titleTxt" value="#{customerPageBean.customer.title}" required="true">
+                                <f:selectItems value="#{globalBean.titles}"/>
+                            </p:selectOneMenu>
+                            <p:message for="titleTxt" display="icon" />
+                        </span>
+
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="firstNameLbl" value="First Name" for="firstNameTxt" styleClass="txtLbl"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="firstNameTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.firstName}"/>
+                            <p:message for="firstNameTxt" display="icon" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="lastNameLbl" value="Last Name" for="lastNameTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="lastNameTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.lastName}"/>
+                            <p:message for="lastNameTxt" display="icon" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="emailLbl" value="E-mail" for="emailTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="emailTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.emailAddress}"
+                                         validatorMessage="Invalid Email Format">
+                                <f:validateRegex 
+                                    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                            </p:inputText>
+                            <p:message for="emailTxt" display="icon" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="genderLbl" value="Gender" for="genderTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:selectOneRadio id="genderTxt" value="#{customerPageBean.customer.gender}" required="true">
+                                <f:selectItem itemValue="Male" itemLabel="Male" />
+                                <f:selectItem itemValue="Female" itemLabel="Female" />
+                            </p:selectOneRadio>  
+                            <p:message for="genderTxt" display="icon" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-12">
+                        <hr size="0" class="pageSeparator"/>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="streetLbl" value="Street No " for="streetTxt" styleClass="txtLbl"/>
+                       </span> 
+                    </div>
+                    <div class="ui-g-10">
+                        <span style="margin-left:3px;">    
+                            <p:inputText id="streetTxt" required="true" autocomplete="off" size="40"
+                                         value="#{customerPageBean.customer.customerAddress.streetDesc}"/>
+                            <p:message for="streetTxt" display="icon" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="cityLbl" value="City " for="cityTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="cityTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.customerAddress.city}"/>
+                            <p:message for="cityTxt" display="icon" />
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="stateLbl" value="State " for="stateTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="stateTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.customerAddress.state}"/>
+                            <p:message for="stateTxt" display="icon" />
+                        </span>
+
+                    </div>
+
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="zipCodeLbl" value="Zip Code " for="zipCodeTxt" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">
+                            <p:inputText id="zipCodeTxt" required="true" autocomplete="off" size="30"
+                                         value="#{customerPageBean.customer.customerAddress.zipCode}"/>
+                            <p:message for="zipCodeTxt" display="icon" />
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <p:outputLabel id="countryLbl" value="Country " for="selCountry" styleClass="txtLbl"/>
+                        </span>
+                        
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;">    
+                            <p:selectOneMenu id="selCountry" value="#{customerPageBean.customer.customerAddress.country}" required="true">
+                                <f:selectItems value="#{globalBean.countries}"/>
+                            </p:selectOneMenu>
+                            <p:message for="selCountry" display="icon" />
+                        </span>
+                    </div>
+
+                </c:when>
+                <c:when test="#{displayMode=='view'}">
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel id="fullName" value="Full Name "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-10">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.fullName}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="E-mail"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.emailAddress}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="Gender"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.gender}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-12">
+                        <hr size="0" class="pageSeparator"/>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="Street"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-10">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.customerAddress.streetDesc}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="City"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.customerAddress.city}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="State"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.customerAddress.state}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="Zip - Code"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.customerAddress.zipCode}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel value="Country"  styleClass="pageLabel"/>
+                        </span>                     
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{customerPageBean.customer.customerAddress.country}"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-12">
+                        <hr size="0" class="pageSeparator"/>
+                    </div>
+                </c:when>
+                <c:when test="#{displayMode=='list'}">
+                    <p:dataTable id="customersTable" var="aCustomer" value="#{customerPageBean.customers}" 
+                                 paginatorPosition="bottom" paginator="true" rows="40" rowIndexVar="rowIndex"
+                                 paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+                        <p:column headerText="No" style="text-align: center;width: 30px;">
+                            <h:outputText value="#{rowIndex+1}"/>
+                        </p:column>
+
+                        <p:column headerText=" Full Name " style="text-align: left;">
+                            <h:outputText value="#{customerPageBean.showFullName(aCustomer)}"/>
+                        </p:column>
+
+                        <p:column headerText=" Registration Number " style="text-align: left;">
+                            <h:outputText value="#{aCustomer.regNo}"/>
+                        </p:column>
+
+                        <p:column headerText=" Email " style="text-align: center;">
+                            <h:outputText value="#{aCustomer.emailAddress}"/>
+                        </p:column>
+
+                        <p:column headerText=" Gender " style="text-align: center;">
+                            <h:outputText value="#{aCustomer.gender}"/>
+                        </p:column>
+
+                        <p:column headerText="Create Date" style="text-align: center;">
+                            <h:outputText value="#{of:formatDate(aCustomer.createDate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </p:column>
+
+                        <p:column headerText="Actions" style="text-align: center;width: 120px;">
+                            <p:commandButton update="@form" icon="view-icon"
+                                             action="#{customerPageBean.setPageResource(pageResource.VIEW_CUSTOMER,aCustomer)}"
+                                             title="View Customer" class="img-button"/>
+
+                            <span class="horizontalSeparator">|</span>
+
+                            <p:commandButton update="@form" icon="edit-icon"
+                                             action="#{customerPageBean.setPageResource(pageResource.EDIT_CUSTOMER,aCustomer)}"
+                                             title="Edit Customer" class="img-button"/>
+
+                            <span class="horizontalSeparator">|</span>
+
+                            <p:commandButton update="@form" icon="delete-icon" 
+                                             oncomplete="PF('deleteCustomerConfirmPopup').show()"
+                                             title="Delete Customer" class="img-button">
+                                <f:setPropertyActionListener value="#{aCustomer}" target="#{customerPageBean.customer}"/>
+                            </p:commandButton>
+
+                            <span class="horizontalSeparator">|</span>
+
+                            <p:commandButton update="@form" icon="account-icon"
+                                             action="#{orderPageBean.setPageResource(pageResource.NEW_ORDER)}"
+                                             title="New Order" class="img-button">
+                                <f:setPropertyActionListener value="#{aCustomer.customerId }" target="#{orderPageBean.customerID}"/>
+                            </p:commandButton>
+
+                        </p:column>
+                    </p:dataTable>
+                </c:when>
+            </c:choose>
+        </ui:composition>
+    </body>
+</html>

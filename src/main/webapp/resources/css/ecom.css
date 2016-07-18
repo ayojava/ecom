@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 Jul, 2016, 2:41:26 AM
+    Author     : ayojava
+*/
+
+body {
+    font-size: 14px;
+    font-family:'century gothic','Courier New','Courier','monospace'; 
+    color: #000000;  
+    margin: 10px;
+}
+
+.left{
+    float:left;
+    width:14%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    min-height: 550px;
+    padding: 3px;
+    border: 1px solid #dddddd;
+}
+
+.right{
+    margin-left: 14.8%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    min-height: 550px;
+    border: 1px solid #dddddd;
+    padding: 3px;
+}
+
+.top{
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    margin-bottom: 3px;
+}
+
+.txtLbl{
+    color: #484848;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.roundBorder{
+    -moz-border-radius: 10px;
+    -khtml-border-radius:10px;
+    -webkit-border-radius: 10px;
+    border-radius: 8px;
+}
+
+.displayErrorMsg{
+    margin-left: auto ;
+    margin-right: auto; 
+    color: #b94a48;
+    background-color: #f2dede;
+    border: 1px solid #eed3d7;
+    font-size: 14px;
+}
+
+label.error {
+    color: #f00;
+    font-weight: bold;
+}
+
+input.error, select.error, textarea.error {
+    background-color: #fee;
+}
+
+input:focus, select:focus, textarea:focus , button:hover {
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+input[type=text],input[type=password]{
+    /*height : 28px;*/
+    padding-left: 5px;
+    font-size: 100%;
+}
+
+
+input[type=text]:focus{
+    padding-left: 5px;
+    font-size: 100%;
+}
+
+input, textarea{
+    font-size: 100%;
+    border-radius:8px;
+    border: 1px solid #dddddd;
+}
+
+.ui-icon.fa {
+    text-indent:0px;
+    background-image:none;
+}
+
+.errorMessage{
+    padding:5px;margin:0 20%;
+    border:1px solid #ccc;
+    font-family:'century gothic','Courier New','Courier','monospace'; 
+    font-size:16px;
+}
+
+
+.errorMessageTitle{
+    font-size:25px;
+    color:blue;
+    font-weight:bold;
+}
+
+.pageLayout {
+    border: 1px solid #AFBEBE;
+    border-radius : 8px;
+    padding : 2px;
+}
+
+.alignRight{
+    text-align: right;
+}
+
+.alignCenter{
+    text-align: center;
+}
+
+.topHeader{
+    font-family: monospace ;
+    font-size: 16px;  
+    color: #0088cc;
+    font-weight: bold;
+    padding-left: 5px;
+}
+.pageSeparator{
+    border:none;
+    border-top:1px dotted #999;
+    margin:0px;
+}
+
+.roundButton{
+    background-image: linear-gradient(to bottom, #fff 0px, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    border-radius: 8px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.profile-image{
+   display: block;
+   margin: auto;
+   width: 120px;
+   height:130px;
+}
+
+.img-button{
+    border-width:0px !important;
+    background:none !important;
+    height: 23px !important;
+    margin: 0px !important;; 
+    width: 16px !important;;
+}
+
+.pageLabel{
+    color:#bc7a00;
+    padding-left: 13px;
+    font-weight: bold;
+}
+
+.pageText{
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.horizontalSeparator{
+    color: #ccc;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.addTableBorders {
+    border: 1px solid #AFBEBE;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid #AFBEBE;
+}
+/*.ui-g div {
+    background-color: #ededed;
+    border: 1px solid #fafafa;
+}*/
+
+/**************BOOTSTRAP************/
