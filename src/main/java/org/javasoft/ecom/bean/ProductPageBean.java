@@ -39,18 +39,15 @@ public class ProductPageBean extends AbstractBean<Product> implements Serializab
     @Getter
     private String subFolder;
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private int productQnty;
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private String categoryId;
 
     private Client client;
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private Product product;
 
     @Getter
@@ -69,6 +66,7 @@ public class ProductPageBean extends AbstractBean<Product> implements Serializab
     public void setPageResource(String pageResource) {
         if (StringUtils.equals(NEW_PRODUCT, pageResource)) {
             product = new Product();
+            productQnty = 0;
             loadAllCategories();
             super.setContentPath(appendFolderPath(subFolder, NEW_PRODUCT));
         } else if (StringUtils.equals(LIST_PRODUCTS, pageResource)) {
@@ -167,5 +165,6 @@ public class ProductPageBean extends AbstractBean<Product> implements Serializab
     public void cleanup() {
         product = null;
         allCategories = null;
+        categoryId = null;
     }
 }

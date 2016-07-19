@@ -53,9 +53,11 @@ public class SessionInitBean extends AbstractBean implements Serializable {
     public void init() {
         super.init();
         log.info(":::: SessionBean Instantiated :::: ");
-        applicationInitBean.increment();
+        
         locateIPAddress();
-        if (StringUtils.isNotBlank(ipAddress) && !StringUtils.equals(ipAddress, "127.0.0.1")) {
+        if (StringUtils.isNotBlank(ipAddress) && !StringUtils.equals(ipAddress, "127.0.0.1")
+                && !StringUtils.equals(ipAddress, "172.16.10.230")) {//
+            applicationInitBean.increment();
             geolocateIPAddress();
             if (output) {
                 GeoLocation geoLocation = new GeoLocation();
