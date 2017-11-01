@@ -3,42 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
-    Created on : 28 Feb, 2016, 12:24:41 AM
-    Author     : ayojava
 
-.no-notification{
-    background: url("#{resource['images/icons/notifications-black.png']}") no-repeat !important;
-    height:16px;
-    width:16px;
-}
-
-.pending-notification{
-    background: url("#{resource['images/icons/notifications-red.png']}") no-repeat !important;
-    height:16px;
-    width:16px;
-}
-
-.management{
-    background: url("#{resource['images/icons/data-management.png']}") no-repeat !important;
-    height:16px;
-    width:16px;
-}
-
-.warning-notification{
-    background: url("#{resource['images/icons/warning-big.png']}") no-repeat !important;
-    height:70px;
-    width:70px;
-    vertical-align: middle;
-}
-
-.log-icon{
-    background: url("#{resource['images/icons/log.png']}") no-repeat !important;
-    height:16px;
-    width:16px;
-}
-
-*/
 
 .view-icon{
     background: url("#{resource['images/icons/actions/view.png']}") no-repeat !important;

@@ -1,3 +1,2 @@
-The OpenShift `jbossas` cartridge documentation can be found at:
-
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-jbossas/README.md
+# ecom
+A Dummy E-Commerce site  (Hibernate OGM , MongoDb , JAX-RS , CDI , Primefaces , Omnifaces ) deployed on Wildfly 10

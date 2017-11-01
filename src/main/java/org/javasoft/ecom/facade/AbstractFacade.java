@@ -16,11 +16,11 @@ import javax.persistence.PersistenceContext;
  */
 public abstract class AbstractFacade<T> {
     
-//    @PersistenceContext(unitName = "localMongoDb_PU")
-//    private EntityManager em;
-    
-    @PersistenceContext(unitName = "openShiftMongoDb_PU")
+    @PersistenceContext(unitName = "localMongoDb_PU")
     private EntityManager em;
+    
+//    @PersistenceContext(unitName = "openShiftMongoDb_PU")
+//    private EntityManager em;
 
     private Class<T> entityClass;
 

@@ -18,51 +18,9 @@ and open the template in the editor.
                             <o:outputLabel id="name" value="Customer Name :"  styleClass="pageLabel"/>
                         </span>
                     </div>
-                    <div class="ui-g-10">
+                    <div class="ui-g-4">
                         <span style="margin-left:3px;" class="pageText">    
                             <h:outputText value="#{orderPageBean.fullName}"/>
-                        </span>
-                    </div>
-
-                    <div class="ui-g-2">
-                        <span style="margin-left:3px;">
-                            <o:outputLabel id="code" value="Order Code : "  styleClass="pageLabel"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-4">
-                        <span style="margin-left:3px;" class="pageText">    
-                            <h:outputText value="#{orderPageBean.order.orderCode}"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-2">
-                        <span style="margin-left:3px;">
-                            <o:outputLabel  value="Status : "  styleClass="pageLabel"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-4">
-                        <span style="margin-left:3px;" class="pageText">    
-                            <h:outputText value="#{orderPageBean.order.status}"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-2">
-                        <span style="margin-left:3px;">
-                            <o:outputLabel  value="Order Date : "  styleClass="pageLabel"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-4">
-                        <span style="margin-left:3px;" class="pageText">    
-                            <h:outputText value="#{of:formatDate(orderPageBean.order.orderdate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
-                        </span>
-                    </div>
-
-                    <div class="ui-g-2">
-                        <span style="margin-left:3px;">
-                            <o:outputLabel  value="Payment Date : "  styleClass="pageLabel"/>
-                        </span>
-                    </div>
-                    <div class="ui-g-4">
-                        <span style="margin-left:3px;" class="pageText">    
-                            <h:outputText value="#{of:formatDate(orderPageBean.order.paymentDate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
                         </span>
                     </div>
 
@@ -76,7 +34,29 @@ and open the template in the editor.
                             <h:outputText value="#{orderPageBean.productCount}"/>
                         </span>
                     </div>
-
+                    
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel id="code" value="Order Code : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.order.orderCode}"/>
+                        </span>
+                    </div>
+                    
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Order Date : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{of:formatDate(orderPageBean.order.orderdate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </span>
+                    </div>
+                    
                     <div class="ui-g-2">
                         <span style="margin-left:3px;">
                             <o:outputLabel  value="Amount : "  styleClass="pageLabel"/>
@@ -87,6 +67,41 @@ and open the template in the editor.
                             <h:outputText value="#{orderPageBean.order.subtotal}"/>
                         </span>
                     </div>
+                    
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Status : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{orderPageBean.order.status}"/>
+                        </span>
+                    </div>
+                    
+                    
+                    <!--
+                    
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Payment Method : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    
+                    <div class="ui-g-2">
+                        <span style="margin-left:3px;">
+                            <o:outputLabel  value="Payment Date : "  styleClass="pageLabel"/>
+                        </span>
+                    </div>
+                    <div class="ui-g-4">
+                        <span style="margin-left:3px;" class="pageText">    
+                            <h:outputText value="#{of:formatDate(orderPageBean.order.paymentDate,pageResource.DISPLAY_DATE_FORMAT_DAYS)}"/>
+                        </span>
+                    </div>
+                    -->
+                    
+
+                    
                     <div class="ui-g-12">
                         <hr size="0" class="pageSeparator"/>
                     </div>
@@ -305,7 +320,7 @@ and open the template in the editor.
                         <p:column headerText="Actions" style="text-align: center;width: 50px;">
                             <p:commandButton update="@form" icon="view-icon"
                                              action="#{orderPageBean.setPageResource(pageResource.VIEW_ORDER)}"
-                                             title="View Category" class="img-button">
+                                             title="View Order" class="img-button">
                                 <f:setPropertyActionListener value="#{aOrder}" target="#{orderPageBean.order}"/>
                             </p:commandButton>
                             <span class="horizontalSeparator">|</span>
